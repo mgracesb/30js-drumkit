@@ -1,52 +1,141 @@
 html {
   font-size: 10px;
-  background: url(https://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background: radial-gradient(rgb(185, 6, 6), black) no-repeat;
   background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
 .keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  background: url(./images/drumkit.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 .key {
-  border: 0.4rem solid black;
   border-radius: 0.5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem 0.5rem;
+  min-width: 52px;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  font-size: 1.5em;
   transition: all 0.07s ease;
-  width: 10rem;
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow: 0 0 0.5rem black;
+  color: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.4);
+  touch-action: manipulation;
+}
+
+.a {
+  grid-row: 1;
+  grid-column: 6;
+  place-self: center;
+}
+
+.s {
+  grid-row: 3;
+  grid-column: 6;
+}
+
+.d {
+  grid-row: 4/6;
+  grid-column: 6;
+  place-self: center;
+}
+
+.f {
+  grid-row: 2;
+  grid-column: 6;
+}
+
+.g {
+  grid-row: 4/6;
+  grid-column: 4/6;
+  place-self: center;
+}
+
+.h {
+  grid-row: 1;
+  grid-column: 3/5;
+  place-self: center;
+}
+.j {
+  grid-row: 2;
+  grid-column: 4/6;
+  place-self: center;
+}
+
+.k {
+  grid-row: 3/5;
+  grid-column: 2/4;
+  place-self: center;
+}
+
+.l {
+  grid-row: 2;
+  grid-column: 2;
+  place-self: center;
 }
 
 .playing {
   transform: scale(1.1);
-  border-color: #ffc600;
+  border-color: #ffee00;
   box-shadow: 0 0 1rem #ffc600;
 }
 
 kbd {
   display: block;
-  font-size: 4rem;
+  font-size: 2em;
 }
 
 .sound {
-  font-size: 1.2rem;
+  font-size: 0.5em;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #ffc600;
+  color: #000000;
+}
+
+@media all and (min-width: 768px) {
+  .key {
+    border: 0.4rem solid black;
+    margin: 1rem;
+    width: 7em;
+    padding: 1em 0.5em;
+  }
+
+  .a {
+    grid-column: 5/7;
+  }
+
+  .d {
+    grid-row: 3/5;
+    grid-column: 5;
+  }
+
+  .k {
+    grid-column: 3;
+  }
+
+  .g {
+    grid-column: 5;
+  }
+
+  .sound {
+    font-size: 1.2rem;
+  }
 }
